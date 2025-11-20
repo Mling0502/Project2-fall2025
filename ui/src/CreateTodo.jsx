@@ -13,8 +13,9 @@ export default function CreateTodo({ API_URL, onTodoCreated }) {
             body: JSON.stringify({ title, description, completed: false }),
         });
 
-	if (response.ok && onTodoCreated) {  // Add check for callback
-            onTodoCreated();  // Call the callback!
+        if (response.ok && onTodoCreated) {
+            // Add check for callback
+            onTodoCreated(); // Call the callback!
             setTitle('');
             setDescription('');
         }

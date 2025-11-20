@@ -37,7 +37,9 @@ export default function Todos({ API_URL, refreshTrigger }) {
                             {todo.description}
                         </div>
                         {/* Add delete button */}
-                        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+                        <button onClick={() => deleteTodo(todo.id)}>
+                            Delete
+                        </button>
                     </li>
                 ))}
             </ul>

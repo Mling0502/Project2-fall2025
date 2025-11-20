@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import './globals.css';
-import Todos from './Todos';  
+import Todos from './Todos';
 import CreateTodo from './CreateTodo';
 
 const API_URL = 'http://localhost:8000';
 
 export default function App() {
-    const [refreshTrigger, setRefreshTrigger] = useState(0);  // Add this
+    const [refreshTrigger, setRefreshTrigger] = useState(0); // Add this
 
-    function refreshTodos() {  // Add this function
+    function refreshTodos() {
+        // Add this function
         setRefreshTrigger((prev) => prev + 1);
     }
 
@@ -19,7 +20,7 @@ export default function App() {
             </header>
             <main>
                 <Todos API_URL={API_URL} refreshTrigger={refreshTrigger} />
-		<CreateTodo API_URL={API_URL} onTodoCreated={refreshTodos} />
+                <CreateTodo API_URL={API_URL} onTodoCreated={refreshTodos} />
             </main>
         </>
     );
